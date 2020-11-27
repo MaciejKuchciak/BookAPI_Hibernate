@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Books!</title>
+    <style>
+        body
+        {
+            background-color: black;
+            color: orange;
+        }
+        a {
+            text-decoration: none;
+        }
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 3px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            filter: brightness(80%);
+            transition: all .3s ease-in-out;
+        }
+        .buttonadd {
+            background-color: blue;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 3px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            filter: brightness(80%);
+            transition: all .3s ease-in-out;
+        }
+        .buttondelete {
+            background-color: darkred;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 3px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            filter: brightness(80%);
+            transition: all .3s ease-in-out;
+        }
+        .button:hover{
+            background-color: gray;
+        }
+        .buttondelete:hover{
+            background-color: darkgrey;
+        }
+        .buttonadd:hover{
+            background-color: darkgrey;
+        }
+    </style>
+</head>
+<body>
+<div style="color: gold;font-size: 32px;text-align: center">Welcome in your library!</div>
+<a th:href="@{/book/form}"><button class="buttonadd" style="min-width: 120px">Add New Book</button></a>
+<ul style="list-style-type:none;" th:each="book: ${books}">
+    <li style="color: red;font-size: 25px" th:text="'Title: ' + ${book.title}"></li>
+    <li th:text="'Author:    ' +${book.author}"></li>
+    <li th:text="'Publisher: ' +${book.publisher}"></li>
+    <li th:text="'Isbn:      ' +${book.isbn}"></li>
+    <li th:text="'Type:      ' +${book.type}"></li>
+    <li th:text="'Id:        ' +${book.id}"></li>
+    <a th:href="@{/book/delete/{id}(id=${book.id})}"><button class="buttondelete" style="min-width: 120px">Delete</button></a>
+    <a th:href="@{/book/form/{id}(id=${book.id})}"><button class="button" style="min-width: 120px">Edit</button></a>
+</ul>
+
+</body>
+</html>

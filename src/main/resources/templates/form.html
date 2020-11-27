@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formularz</title>
+    <style>
+        body
+        {
+            background-color: black;
+            color: orange;
+        }
+        a {
+            text-decoration: none;
+        }
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 3px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            filter: brightness(80%);
+            transition: all .3s ease-in-out;
+        }
+        .buttonadd {
+            background-color: blue;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 3px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            filter: brightness(80%);
+            transition: all .3s ease-in-out;
+        }
+        .buttondelete {
+            background-color: darkred;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 3px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            filter: brightness(80%);
+            transition: all .3s ease-in-out;
+        }
+        .button:hover{
+            background-color: gray;
+        }
+        .buttondelete:hover{
+            background-color: darkgrey;
+        }
+        .buttonadd:hover{
+            background-color: darkgrey;
+        }
+    </style>
+</head>
+<body>
+<h1>Book details:</h1>
+<form th:object="${book}" method="post" th:action="@{/book/form}">
+    <section>
+        <label>Title</label>
+        <input type="text" th:field="*{title}"/>
+        <input type="hidden" th:field="*{id}"/>
+    </section>
+    <section>
+        <label>Author</label>
+        <input type="text" th:field="*{author}"/>
+    </section>
+    <section>
+        <label>Publisher</label>
+        <input type="text" th:field="*{publisher}"/>
+    </section>
+    <section>
+        <label>ISBN</label>
+        <input type="text" th:field="*{isbn}"/>    </section>
+    <section>
+        <label>Type</label>
+        <input type="text" th:field="*{type}">
+    </section>
+    <section>
+        <button type="submit">Save</button>
+    </section>
+</form>
+</body>
+</html>

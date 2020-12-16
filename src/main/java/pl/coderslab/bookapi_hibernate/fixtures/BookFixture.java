@@ -12,11 +12,11 @@ import java.util.List;
 public class BookFixture {
     private BookService bookService;
     private List<Book> bookList = Arrays.asList(
-            new Book(null, "9788324631766", "Game of Throne", "George Martin", "Zysk", "fantasy"),
-            new Book(null, "9788324627738", "Krzyzacy", "Henryk Sienkiwicz", "TT", "fantasy"),
-            new Book(null, "9780130819338", "Pan Wołodyjowski", "Henryk Sienkiewicz", "TT", "fantasy"),
-            new Book(null, "3901283092103", "Chłopi", "Władysław Reymont", "ZNAK", "fantasy"),
-            new Book(null, "9140298320983", "Samozwaniec", "Jacek Komuda", "Fabryka Słów", "fantasy")
+            new Book(null, "9788324631766", "Game of Thrones", "George R. R. Martin", "Bantam Spectra", "fantasy"),
+            new Book(null, "9788324627738", "Head First Java", "Kathy Sierra, Bert Bates", "O'Reilly Media, Inc.", "programming"),
+            new Book(null, "9780130819338", "The Lord of the Rings", "J.R.R. Tolkien", "Allen & Unwin", "fantasy"),
+            new Book(null, "3901283092103", "The Witcher", "Andrzej Sapkowski", "SuperNowa", "fantasy"),
+            new Book(null, "9140298320983", "The 7 Habits of Highly Effective People", "Stephen Covey", "Free Press", "self-development")
     );
 
     @Autowired
